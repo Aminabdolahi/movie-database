@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_KEY = "ce34ae55b0f908ff9a1a5059263792e7";
-const API_BASE_URL = "https://api.themoviedb.org/3"
+// const API_KEY = process.env.API_KEY;
+// const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
 
-
+// console.log(API_BASE_URL)
 const client = axios.create({
-    baseURL : API_BASE_URL,
-    params : {api_key : API_KEY}
+    baseURL : process.env.NEXT_PUBLIC_API_URL,
+    params : {api_key : process.env.NEXT_PUBLIC_API_KEY}
 })
 
 export const searchMovies = async (query:string) =>{
